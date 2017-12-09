@@ -2,10 +2,11 @@
 
 from collections import Counter
 import random
+from sys import argv
 
 def generate_sequence(n, chars = ['A','C','T','G']):
 	dna = ''
-	for i in range(n):
+	for i in range(int(n)):
 		dna += chars[random.randrange(4)]
 	return dna
 
@@ -48,16 +49,32 @@ def windows(S, T):
 
 
 if __name__ == '__main__':
-	print('-----------------------------------------------')
+	print('\n')
 	# generate string
-	dna = generate_sequence(100)
+	dna = generate_sequence(argv[1])
 
-	print('Alphabet is: %s' % ''.join(get_alphabet(dna)))
+	
 
 	T = alphabet_str(dna)
-	print('Words found: ')
 	words = [dna[i:j] for i, j in windows(dna, T)]
 	cnt = Counter()
 	for word in words:
 		cnt[word] += 1
-	print(cnt.most_common(3))
+	x = list(cnt.elements())
+	y = len(x) / float(len(dna))
+	#for i in range(len(x)):
+	#	print(x[i])
+	print(' ------------------------------------------')
+	print(' | Sequence length:                   %s  |' % len(dna))
+	print(' | Number of words:                   %s   |' % len(x))
+	print(' | Length of longest word in list:    %s   |' % len(max(x, key=len)))
+	print(' | Number of sections:                %s |' % y)
+	print(' ------------------------------------------')
+	print('\n')
+	print('Longest word in list: %s' % max(x, key=len))
+	print('DNA: %s' % dna)
+	print('Alphabet is: %s' % ''.join(get_alphabet(dna)))
+	
+	
+	
+	print('\n')
