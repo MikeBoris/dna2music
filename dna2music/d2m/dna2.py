@@ -71,10 +71,39 @@ if __name__ == '__main__':
 	print(' | Number of sections:                %s |' % y)
 	print(' ------------------------------------------')
 	print('\n')
-	print('Longest word in list: %s' % max(x, key=len))
-	print('DNA: %s' % dna)
+	
+	
 	print('Alphabet is: %s' % ''.join(get_alphabet(dna)))
-	
-	
+	print('DNA: %s' % dna)
+	print('Longest word in list: %s' % max(x, key=len))
 	
 	print('\n')
+	print('Print groups of k words: ')
+	for i in range(len(x)):
+		print(x[i])
+	'''
+	okay we have a list of words
+	but we need sections (sequences of words)
+	now, first create a new sequence
+		while most_common_letters_count < 4 (or some arbitrary #)
+		start with the first word; concatenate with the second word; concatenate with the third word;
+
+	for i in list of words:
+		while most_common_letter < 4:
+			Counter(x[i]).most_common(1)
+
+			Counter(x[i] + x[i+1]).most_common(1)
+
+			# number value of most common character in Counter object
+			x.most_common(1)[0][1]
+			# char of most common character in Counter object
+			x.most_common(1)[0][0]
+
+			new_str = ''
+			new_str += x.most_common(1)[0][0]
+			print(new_str)
+			A
+			y = Counter('ATACAGCTAGATCTT')
+			new_str += y.most_common(1)[0][0]
+			new_str
+			'AA'
