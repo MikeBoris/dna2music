@@ -107,3 +107,16 @@ if __name__ == '__main__':
 			new_str += y.most_common(1)[0][0]
 			new_str
 			'AA'
+
+	for i in list of words:
+		x = Counter(i)
+		x_str = ''.join([x.most_common(4)[i][0] for i in range(4)])
+		# simpler: x_str = ''.join(list(x))
+		# ACTG
+
+		convert each word to its representative 4-char key
+		to build a section:
+		for each word in list:
+			while contents of defaultdict do not contain 4 unique keys with at least 2 support each:
+				ith 4-char key + ith+1 4-char key
+
