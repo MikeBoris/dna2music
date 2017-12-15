@@ -42,18 +42,10 @@ def windows(S, T):
             yield (i_tail, i_head + 1)
             test_ms[char_tail] -= 1
 
-
-
-
-
-
-
 if __name__ == '__main__':
 	print('\n')
 	# generate string
 	dna = generate_sequence(argv[1])
-
-	
 
 	T = alphabet_str(dna)
 	words = [dna[i:j] for i, j in windows(dna, T)]
@@ -64,14 +56,13 @@ if __name__ == '__main__':
 	y = len(x) / float(len(dna))
 	#for i in range(len(x)):
 	#	print(x[i])
-	print(' ------------------------------------------')
+	print(' -------------------------------------------')
 	print(' | Sequence length:                   %s  |' % len(dna))
 	print(' | Number of words:                   %s   |' % len(x))
 	print(' | Length of longest word in list:    %s   |' % len(max(x, key=len)))
 	print(' | Number of sections:                %s |' % y)
-	print(' ------------------------------------------')
+	print(' -------------------------------------------')
 	print('\n')
-	
 	
 	print('Alphabet is: %s' % ''.join(get_alphabet(dna)))
 	print('DNA: %s' % dna)
@@ -120,3 +111,4 @@ if __name__ == '__main__':
 			while contents of defaultdict do not contain 4 unique keys with at least 2 support each:
 				ith 4-char key + ith+1 4-char key
 
+'''
