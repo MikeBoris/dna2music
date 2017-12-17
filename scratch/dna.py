@@ -28,11 +28,9 @@ def dna_fetch(email, id=['NM_002299']):
 
 # seq = SeqIO.read(hdl, 'fasta')
 
-
 from desulfo import genome
 
 # number of 
-
 
 from collections import Counter
 import re
@@ -67,7 +65,19 @@ for m in matches:
     print(base + " found at position " + str(pos))
 
 
+^(?=[^A]*A)(?=[^C]*C)(?=[^T]*T)(?=[^G]*G)
 
+(?=.*A)(?=.*C)(?=.*T)(?=.*G)
+
+(?=([ATGC]{4,}))(?=[GTC]*A)(?=[ACT]*G)(?=[AGT]*C)(?=[AGC]*T)\1
+
+(?:.*?(?:((?(1)(?!))A)|((?(2)(?!))C)|((?(3)(?!))T))){3}
+
+matches = re.finditer(r'[AT]{6,}', dna)
+for m in matches:
+    base = m.group()
+    pos = m.start()
+    print(base + ' found at position ' + str(pos))
 
 
 
