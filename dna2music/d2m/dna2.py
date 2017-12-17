@@ -44,11 +44,14 @@ def windows(S, T):
 
 if __name__ == '__main__':
 	print('\n')
+	
 	# generate string
 	dna = generate_sequence(argv[1])
-
+	# find alphabet
 	T = alphabet_str(dna)
+	# get list of words
 	words = [dna[i:j] for i, j in windows(dna, T)]
+
 	cnt = Counter()
 	for word in words:
 		cnt[word] += 1

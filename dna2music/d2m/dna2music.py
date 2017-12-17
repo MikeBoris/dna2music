@@ -97,16 +97,40 @@ def get_sections(word_list):
 			presection.clear()
 	return sections
 
+def get_section_stats(sections):
+	''' function that takes sections (dict of dicts)
+	and returns stats on each
+	'''
+	# number of sections
+	x = len(sections)
+	# get list of lengths of each section
+	ll = [len(sections[i].values()) for i in sections.keys()]
+	# sum of lengths of each section
+	y = sum(ll)
+	# get longest section
+	z = max(ll)
+	# shortest section
+	w = min(ll)
+
+
+sections = {
+	's8': {'ATCG': 1, 'ACTG': 3, 'ACGT': 3, 'AGCT': 1},
+	's3': {'ATCG': 1, 'ACTG': 3, 'ACGT': 3, 'AGCT': 3, 'CATG': 1, 'CTAG': 1, 'ACTG': 6},
+	's1': {'ATCG': 1, 'ACTG': 3, 'ACGT': 3, 'AGCT': 1},
+	's2': {'CATG': 1, 'CTAG': 1, 'ACTG': 6}
+}
+
+
+{'s8': {'ATCG': 1, 'ACTG': 3, 'ACGT': 3, 'AGCT': 1},
+
 if __name__ == '__main__':
 	word_list = get_word_list(argv[1])
 	sections = get_sections(word_list)
+	print(sections)
 	for x in sections:
 		print(x)
-		for y in sections[x]:
-			print(y, sections[x][y])
-
-#print(sections)
-
+		#for y in sections[x]:
+		#	print(y, sections[x][y])
 
 # for each section
 # calculate:
@@ -115,11 +139,9 @@ if __name__ == '__main__':
 #len(d.keys())
 #sum(d.values())
 
-
 # print description:
 # avg section length
 # longest, shortest sections
 # densest sections
-# 
-# better name for dna3.py
+
 
