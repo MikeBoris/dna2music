@@ -53,9 +53,9 @@ def get_word_list(n):
 	# find alphabet
 	T = alphabet_str(dna)
 	# get list of words
-	words = [dna[i:j] for i, j in windows(dna, T)]
+	word_list = [dna[i:j] for i, j in windows(dna, T)]
 	#
-	return words
+	return word_list
 
 def is_section(d):
 	'''
@@ -119,7 +119,7 @@ def get_section_stats(sections):
 	'''
 	# number of sections
 	x = len(sections)
-	# get list of lengths of each section
+	# get list of lengths (=num of elements) of each section
 	ll = [len(sections[i].values()) for i in sections.keys()]
 	# sum of lengths of each section
 	y = sum(ll)
@@ -127,21 +127,23 @@ def get_section_stats(sections):
 	z = max(ll)
 	# shortest section
 	w = min(ll)
-
-
+	print('Number of sections: {0}\nLongest section: {1}'.format(x, z))
+'''
 sections = {
 	's8': {'ATCG': 1, 'ACTG': 3, 'ACGT': 3, 'AGCT': 1},
 	's3': {'ATCG': 1, 'ACTG': 3, 'ACGT': 3, 'AGCT': 3, 'CATG': 1, 'CTAG': 1, 'ACTG': 6},
 	's1': {'ATCG': 1, 'ACTG': 3, 'ACGT': 3, 'AGCT': 1},
 	's2': {'CATG': 1, 'CTAG': 1, 'ACTG': 6}
 }
-
+'''
 if __name__ == '__main__':
 	word_list = get_word_list(argv[1])
 	sections = get_sections(word_list)
-	print(sections)
-	for x in sections:
-		print(x)
+	get_section_stats(sections)
+
+	#print(sections)
+	#for x in sections:
+	#	print(x)
 		#for y in sections[x]:
 		#	print(y, sections[x][y])
 
