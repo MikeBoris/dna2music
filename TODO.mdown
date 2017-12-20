@@ -1,8 +1,29 @@
 TODO
 ====
 
+- generate euclidean rhythm (need two numbers a < b from instrument-dictionary)
+	- so this dict now has an associated rhythm pattern
+- Key: randomly-selected a key (or multiple keys); 
+	- need dictionary of notes of each key
+	- All Possible Notes = set(selected keys)
+	- For pitch: random.choice(list(All Possible Notes)) 
+	- all the notes contained in the key(s) are collectively All Possible Notes
+
+- at least one sequence of notes, each with a pitch and duration projected onto a rhythm = melody
+
+
+
+
+
+Enhancements
+============
+
 - select words sequentially (from a -> b, from b -> c, etc) instead of finding all possible words
 - separate code by instrumental group
 	- rhythm section
 	- 
 - write succinct description of layers of abstraction (score, instruments, melodies, notes, rhythms) in README
+
+- in future take random walk among All Possible Notes + Rests
+
+- accept FASTA file
