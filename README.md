@@ -1,5 +1,8 @@
-dna2music
-=========
+dna2music WIP
+=============
+
+Melody - random walk on notes representing keys...
+Rhythm generated using Bjorklund's implementation of Euclidean algorithm.
 
 Program that converts FASTA file to music (in the form of midi, wav, or score).
 
