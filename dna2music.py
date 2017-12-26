@@ -127,7 +127,7 @@ def get_section_stats(sections):
 	z = max(ll)
 	# shortest section
 	w = min(ll)
-	print('Number of sections: {0}\nLongest section: {1}'.format(x, z))
+	print('Number of instruments: {0}\nLongest section: {1}'.format(x, z))
 '''
 sections = {
 	's8': {'ATCG': 1, 'ACTG': 3, 'ACGT': 3, 'AGCT': 1},

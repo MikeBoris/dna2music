@@ -1,4 +1,5 @@
 # bjorklund.py
+from sys import argv
 
 # need count array
 count = []
@@ -67,5 +68,5 @@ def bjorklund(steps, pulses):
 	pattern = pattern[i:] + pattern[0:i]
 	return pattern
 
-print(bjorklund(13,5))	
+print(bjorklund(argv[1], argv[2]))	
 
